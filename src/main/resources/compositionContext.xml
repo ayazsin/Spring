@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+        <bean id="menu1" class="composition.Menu">
+            <constructor-arg name="name" value="MenuduJour"></constructor-arg>
+            <constructor-arg name="plats">
+
+                    <list>
+                         <bean id="plat1" class="composition.Plat">
+                         <constructor-arg name="code" value="01"></constructor-arg>
+                         <constructor-arg name="name" value="SaladeNicoise"></constructor-arg>
+                         <constructor-arg name="price" value="8"></constructor-arg>
+                         </bean>
+                        <bean id="plat2" class="composition.Plat">
+                            <constructor-arg name="code" value="02"></constructor-arg>
+                            <constructor-arg name="name" value="Burger"></constructor-arg>
+                            <constructor-arg name="price" value="6"></constructor-arg>
+                        </bean>
+                        <bean id="plat3" class="composition.Plat">
+                            <constructor-arg name="code" value="03"></constructor-arg>
+                            <constructor-arg name="name" value="Yaourt"></constructor-arg>
+                            <constructor-arg name="price" value="3"></constructor-arg>
+                        </bean>
+
+                    </list>
+            </constructor-arg>
+        </bean>
+
+    <bean id="menu2" class="composition.Menu">
+        <constructor-arg name="name" value="MenuduPaysan"></constructor-arg>
+        <constructor-arg name="platsMap">
+
+            <map>
+                <entry key="01">
+                    <bean id="plat01" class="composition.Plat">
+                    <constructor-arg name="code" value="01"></constructor-arg>
+                    <constructor-arg name="name" value="Icli Kofte"></constructor-arg>
+                    <constructor-arg name="price" value="10"></constructor-arg>
+                </bean></entry>
+                <entry key="02">
+                    <bean id="plat02" class="composition.Plat">
+                        <constructor-arg name="code" value="02"></constructor-arg>
+                        <constructor-arg name="name" value="Fettuchini"></constructor-arg>
+                        <constructor-arg name="price" value="12"></constructor-arg>
+                    </bean>
+                </entry>
+                <entry key="03">
+                    <bean id="plat03" class="composition.Plat">
+                        <constructor-arg name="code" value="03"></constructor-arg>
+                        <constructor-arg name="name" value="Chocolate cake"></constructor-arg>
+                        <constructor-arg name="price" value="8"></constructor-arg>
+                    </bean>
+                </entry>
+
+            </map>
+        </constructor-arg>
+    </bean>
+
+</beans>
